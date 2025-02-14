@@ -51,6 +51,9 @@
 
     --default-font: 'Lexend', Arial, sans-serif;
     --distance-between-border-in-nav: 0 0.5vw;
+
+    --nav-height: 50px;
+    --footer-height: 50px;
 }
 
 /*******************************************
@@ -68,7 +71,7 @@
 
 .navbar {
     background-color: var(--yellow);
-    height: 50px;
+    height: var(--nav-height);
 
     display: flex;
     justify-content: space-between; /*Centers items horizontally*/
@@ -175,6 +178,20 @@ body {
     padding: 0 0.5vw; /*0.5 vw padding left & right for everything inside main - to avoid placing right on border*/
 }
 
+
+.produkt-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.produkt-container > article {
+    background-color: var(--yellow);
+    height: 300px;
+    width: 250px;
+    margin: 1rem 1rem;
+}
+
 /*******************************************
 *                  FOOTER                  *
 *******************************************/
@@ -182,7 +199,7 @@ body {
 .yellow-bg-color-in-footer {
     background-color: #171717;
 
-    padding: 1.5vh 0;
+    padding: 1rem 0;
 }
 
 footer {
@@ -190,8 +207,7 @@ footer {
     color: var(--white);
     text-align: center;
 
-    padding-top: 0.3vh;
-    margin-top: 65px /*just for visualization of where footer is supposed to be, remove later*/
+    padding-top: 0.2rem; /*Makes the yellow background show a little on the top of the footer*/
 }
 
 #logotyp-i-footer {
@@ -206,7 +222,35 @@ footer {
 /*TABLET*/
 @media (min-width: 768px) {
 
-    /*Hide & Seek*/
+    /*LAYOUT
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: var(--nav-height) auto 50px;
+    }
+
+    nav {
+        grid-column-start: 1;
+        grid-column-end: 4;
+
+        grid-row-start: 1;
+    }
+
+    main {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+        grid-row-start: 2;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+        grid-row-start: 3;
+    }*/
+
+    /*HIDE AND SEEK*/
     #dropdown-button,
     .dropdown {
         visibility: hidden;
@@ -226,6 +270,35 @@ footer {
 
 /*DESKTOP*/
 @media (min-width: 1025px) {
-    /*Hide & Seek*/
+
+    /*LAYOUT
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: var(--nav-height) auto 50px;
+    }
+
+    nav {
+        grid-column-start: 1;
+        grid-column-end: 4;
+
+        grid-row-start: 1;
+    }
+
+    main {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+        grid-row-start: 2;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+        grid-row-start: 3;
+    }*/
+
+    /*HIDE AND SEEK*/
 
 }
