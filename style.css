@@ -65,6 +65,15 @@
     padding: 0;
 }
 
+body {
+    background-color: #292929;
+    color: var(--white);
+    font-family: var(--default-font);
+
+    display: flex;
+    flex-direction: column;
+}
+
 /*******************************************
 *                  NAVBAR                  *
 *******************************************/
@@ -132,7 +141,6 @@
 }
 
 /*Dropdown menu (overlapping main)*/
-
 #dropdown {
 
     background-color: var(--dark-gray);
@@ -165,13 +173,8 @@
 *                   MAIN                   *
 *******************************************/
 
-body {
-    background-color: #292929;
-    color: var(--white);
-    font-family: var(--default-font);
-
-    display: flex;
-    flex-direction: column;
+main {
+    padding-bottom: 3vh;
 }
 
 h1 {
@@ -179,7 +182,6 @@ h1 {
 }
 
 /*Sökfält*/
-
 .sökfält {
     display: flex;
     justify-content:center;
@@ -188,6 +190,26 @@ h1 {
 
 .sökfält img {
     height: 30px;
+}
+
+/*Produkter*/
+.produkter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
+    gap: 20px;
+    max-width: 1200px; /*Ser till att griden är max 1200 pixlar bred oavsett*/
+    margin: auto; /*Centrerar alla produkter till mitten av skärmen*/
+}
+
+.utvalda-produkter {
+    grid-column: 1 / -1; /*Starta vid kolumn 1 och gå till sista kolumn (där -1 = sista)*/
+    background-color: var(--yellow);
+}
+
+.produkt {
+    display: flex;
+    flex-direction: column;
+    background-color: #00000000;
 }
 
 /*******************************************
@@ -220,33 +242,6 @@ footer {
 /*TABLET*/
 @media (min-width: 768px) {
 
-    body {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: var(--nav-height) auto 50px;
-    }
-
-    nav {
-        grid-column-start: 1;
-        grid-column-end: 4;
-
-        grid-row-start: 1;
-    }
-
-    main {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        
-        grid-row-start: 2;
-    }
-
-    footer {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        
-        grid-row-start: 3;
-    }
-
     /*HIDE AND SEEK*/
     #dropdown-button,
     .dropdown {
@@ -263,38 +258,20 @@ footer {
         justify-content: center; /*Centers every element in navbar horizontally*/
     }
 
+    /*Produkter*/
+    .produkt-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 /*DESKTOP*/
 @media (min-width: 1025px) {
 
-    /*LAYOUT
-    body {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: var(--nav-height) auto 50px;
+    
+    .produkt-container {
+        grid-template-columns: repeat(5, 1fr);
     }
-
-    nav {
-        grid-column-start: 1;
-        grid-column-end: 4;
-
-        grid-row-start: 1;
-    }
-
-    main {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        
-        grid-row-start: 2;
-    }
-
-    footer {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        
-        grid-row-start: 3;
-    }*/
 
     /*HIDE AND SEEK*/
 
