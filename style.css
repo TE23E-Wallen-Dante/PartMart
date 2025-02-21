@@ -177,19 +177,38 @@ main {
     padding-bottom: 3vh;
 }
 
-h1 {
-    text-align: center;
-}
-
 /*Sökfält*/
 .sökfält {
+    margin-top: 3vh;
+}
+
+.sökfält, .sökfält-innehåll, .sökfält-innehåll button {
     display: flex;
     justify-content:center;
     align-items: center;
 }
 
+.sökfält-innehåll input {
+    
+    border: none;
+}
+
+.sökfält-innehåll {
+    height: 4vh;
+    padding: 0 1vw;
+    border-radius: 10px;
+
+    background-color: var(--white);
+}
+
+.sökfält-innehåll button{
+    margin-left: 1vw;
+    border: none;
+    background-color: #00000000;
+}
+
 .sökfält img {
-    height: 30px;
+    height: 1vw;
 }
 
 /*Produkter*/
@@ -204,15 +223,46 @@ h1 {
     text-align: center;
 }
 
+/*Utvalda Produkter-fönster*/
 .utvalda-produkter {
     grid-column: 1 / -1; /*Starta vid kolumn 1 och gå till sista kolumn (där -1 = sista)*/
-    background-color: var(--yellow);
+
+    margin: 3vh 0;
+    height: 40vh;
+
+    background-image: linear-gradient(#00000050, #00000050), url("./images/nvidia_background.webp");
 }
 
+/*Produkter*/
 .produkt {
     display: flex;
     flex-direction: column;
-    background-color: #00000000;
+    background-color: #00000050;
+}
+
+.produkt a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.produkt a:hover {
+    color: var(--yellow);
+}
+
+.produkt h3 {
+    font-size: 14px;
+}
+
+.produkt p {
+    color: var(--red);
+}
+
+.produkt img {
+    width: 100%;
+}
+
+.produkt-inforuta {
+    background-color: #00000050;
 }
 
 /*******************************************
