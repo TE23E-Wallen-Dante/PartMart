@@ -199,6 +199,9 @@ h1 {
     gap: 20px;
     max-width: 1200px; /*Ser till att griden är max 1200 pixlar bred oavsett*/
     margin: auto; /*Centrerar alla produkter till mitten av skärmen*/
+
+    
+    text-align: center;
 }
 
 .utvalda-produkter {
