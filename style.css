@@ -66,6 +66,10 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: var(--dark);
     color: var(--white);
@@ -104,7 +108,6 @@ body {
 
 .navbar a {
     color: var(--black);
-    text-decoration: none;
 
     margin: 0 7px; /*Space between links, should be fixed value*/
 }
@@ -159,7 +162,7 @@ body {
 
 #dropdown a {
     text-align: center;
-    text-decoration: none;
+    
     color: var(--white);
 
     padding-top: 0.5vh;
@@ -199,7 +202,7 @@ main {
     background-repeat: no-repeat;
 
     font-size: 14px;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 0 12px 40px;
 }
 
 /*Produkter*/
@@ -222,6 +225,40 @@ main {
     height: 40vh;
 
     background-image: linear-gradient(#00000050, #00000050), url("./images/nvidia_background.webp");
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.utvalda-produkter h2 {
+    color: var(--white);
+    font-size: 48px;
+}
+
+.utvalda-produkter button {
+    position: absolute; /*Gör att endast knappen ska flyttas ner, inte headern*/
+    margin-top: 25vh;
+
+    font-size: 18px;
+    font-weight: bold;
+    padding: 1vh 2vw;
+
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 50vw; /*För att göra bordern rundad, för att matcha med sökfältet*/
+
+    cursor: pointer;
+
+    transition: ease-in-out 0.1s;
+}
+
+.utvalda-produkter button:hover {
+    color: var(--red);
+    transition: ease-in-out 0.1s;
+    padding: 1.25vh 2.5vw; /*Samma värden som innan hovern, men 25% större*/
 }
 
 /*Produkter*/
@@ -233,7 +270,6 @@ main {
 
 .produkt a {
     color: var(--white);
-    text-decoration: none;
 }
 
 .produkt a:hover {
@@ -262,7 +298,6 @@ main {
 
 .yellow-bg-color-in-footer {
     background-color: #171717;
-
     padding: 1rem 0;
 }
 
@@ -294,7 +329,6 @@ footer {
 
     .navbar-links {
         display: flex;
-
     }
 
     /*NAVBAR*/
