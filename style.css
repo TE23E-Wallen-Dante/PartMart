@@ -50,6 +50,7 @@
     --dark-gray: #171717;
 
     --default-font: 'Lexend', Arial, sans-serif;
+    --symbol-size-fixed: 25px;
     --distance-between-border-in-nav: 0 0.5vw;
 
     --nav-height: 50px;
@@ -121,7 +122,7 @@ body {
 
 /*Cart & Dropdown Button properties*/
 .navbar-ikoner img {
-    width: 25px;
+    width: var(--symbol-size-fixed);
 }
 
 /*Dropdown Button*/
@@ -178,37 +179,28 @@ main {
 }
 
 /*Sökfält*/
-.sökfält {
-    margin-top: 3vh;
-}
 
-.sökfält, .sökfält-innehåll, .sökfält-innehåll button {
+.sökfält {
     display: flex;
     justify-content:center;
     align-items: center;
+
+    margin-top: 3vh;
 }
 
-.sökfält-innehåll input {
-    
+.sökfält-innehåll > input {
+    width: 300px;
+    outline: none;
     border: none;
-}
+    border-radius: 50vw; /*För att göra bordern rundad*/
 
-.sökfält-innehåll {
-    height: 4vh;
-    padding: 0 1vw;
-    border-radius: 10px;
+    background-image: url("./images/search.webp");
+    background-size: var(--symbol-size-fixed);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
 
-    background-color: var(--white);
-}
-
-.sökfält-innehåll button{
-    margin-left: 1vw;
-    border: none;
-    background-color: #00000000;
-}
-
-.sökfält img {
-    height: 1vw;
+    font-size: 14px;
+    padding: 12px 20px 12px 40px;
 }
 
 /*Produkter*/
