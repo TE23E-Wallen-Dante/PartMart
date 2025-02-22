@@ -67,7 +67,7 @@
 }
 
 body {
-    background-color: #292929;
+    background-color: var(--dark);
     color: var(--white);
     font-family: var(--default-font);
 
@@ -92,7 +92,7 @@ body {
 /*Navbar logotype properties*/
 #logotyp-i-navbar {
     font-family: 'Nabla', serif;
-    font-palette: --logotype-navbar;
+    font-palette: --logotype-navbar; /*"Korrekt" angivning av variabel fungerar ej, antagligen pga att det är en väldigt ny css-funtion att ändra fontpaletten*/
     font-size: 24px;
     margin: var(--distance-between-border-in-nav);
 }
@@ -132,7 +132,6 @@ body {
     border: none;
     transition: ease-in-out 0.1s;
 
-    padding: 1vh;
     margin: var(--distance-between-border-in-nav);
 }
 
