@@ -337,7 +337,7 @@ footer {
     }
 
     /*Produkter*/
-    .produkt-container {
+    .produkter-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -347,7 +347,7 @@ footer {
 @media (min-width: 1025px) {
 
     
-    .produkt-container {
+    .produkter-container {
         grid-template-columns: repeat(5, 1fr);
     }
 
