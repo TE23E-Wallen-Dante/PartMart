@@ -48,6 +48,7 @@
     --white: #FFFFFF;
     --dark: #292929;
     --dark-gray: #171717;
+    --dark-transparent: #00000050;
 
     --default-font: 'Lexend', Arial, sans-serif;
     --symbol-size-fixed: 25px;
@@ -212,7 +213,6 @@ main {
     gap: 20px;
     max-width: 1200px; /*Ser till att griden är max 1200 pixlar bred oavsett*/
     margin: auto; /*Centrerar alla produkter till mitten av skärmen*/
-
     
     text-align: center;
 }
@@ -289,7 +289,30 @@ main {
 }
 
 .produkt-inforuta {
-    background-color: #00000050;
+    background-color: var(--dark-transparent);
+    padding-bottom: 0.5vh;
+}
+
+/*Knappen för "Lägg till i varukorg"*/
+.produkt button{
+    padding: 1vh;
+
+    background-color: var(--dark-transparent);
+    border: solid 2px #00000000; /*Sätter border transparent för att ta bort standardkanten på knappen*/
+    border-top: solid 2px var(--yellow); /*Ändrar toppen av bordern till solid gul, efter att ha "tagit bort" (dolt) standardkanten*/
+    color: var(--white);
+
+    font-family: var(--default-font);
+    font-size: 14px;
+
+    transition: ease-in-out 0.1s;
+}
+
+.produkt button:hover {
+    border: 2px solid var(--yellow);
+    cursor: pointer;
+    
+    transition: ease-in-out 0.1s;
 }
 
 /*******************************************
