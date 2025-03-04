@@ -2,8 +2,10 @@
 *                 IMPORTS                  *
 *******************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap'); /*Main font*/
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap'); /*Logo font*/
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+/*Main font*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+/*Logo font*/
 
 /*Properties (Font palette values) for Nabla font in navbar (makes it black)*/
 @font-palette-values --logotype-navbar {
@@ -89,15 +91,18 @@ body {
     height: var(--nav-height);
 
     display: flex;
-    justify-content: space-between; /*Centers items horizontally*/
-    align-items: center; /*Centers items vertically*/
+    justify-content: space-between;
+    /*Centers items horizontally*/
+    align-items: center;
+    /*Centers items vertically*/
 
 }
 
 /*Navbar logotype properties*/
 #logotyp-i-navbar {
     font-family: 'Nabla', serif;
-    font-palette: --logotype-navbar; /*"Korrekt" angivning av variabel fungerar ej, antagligen pga att det är en väldigt ny css-funtion att ändra fontpaletten*/
+    font-palette: --logotype-navbar;
+    /*"Korrekt" angivning av variabel fungerar ej, antagligen pga att det är en väldigt ny css-funtion att ändra fontpaletten*/
     font-size: 24px;
     margin: var(--distance-between-border-in-nav);
 }
@@ -110,7 +115,8 @@ body {
 .navbar a {
     color: var(--black);
 
-    margin: 0 7px; /*Space between links, should be fixed value*/
+    margin: 0 7px;
+    /*Space between links, should be fixed value*/
 }
 
 .navbar a:hover {
@@ -150,7 +156,8 @@ body {
     background-color: var(--dark-gray);
 
     width: 100%;
-    padding: 2vh 0; /*2 vh padding top & bottom for every a-element in the dropdown menu*/
+    padding: 2vh 0;
+    /*2 vh padding top & bottom for every a-element in the dropdown menu*/
     display: none;
     flex-direction: column;
     justify-self: flex-end;
@@ -158,12 +165,13 @@ body {
 }
 
 #dropdown.active {
-    display: flex; /*Makes sure the dropdown shows when clicked*/
+    display: flex;
+    /*Makes sure the dropdown shows when clicked*/
 }
 
 #dropdown a {
     text-align: center;
-    
+
     color: var(--white);
 
     padding-top: 0.5vh;
@@ -185,17 +193,18 @@ main {
 
 .sökfält {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 
     margin-top: 3vh;
 }
 
-.sökfält-innehåll > input {
+.sökfält-innehåll>input {
     width: 300px;
     outline: none;
     border: none;
-    border-radius: 50vw; /*För att göra bordern rundad*/
+    border-radius: 50vw;
+    /*För att göra bordern rundad*/
 
     background-image: url("./images/search.webp");
     background-size: var(--symbol-size-fixed);
@@ -209,24 +218,28 @@ main {
 /*Produkter*/
 .produkter-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*Varje kolumn är minst 200px; repeterar så många gånger som de får plats*/
     gap: 20px;
-    max-width: 1200px; /*Ser till att griden är max 1200 pixlar bred oavsett*/
-    margin: auto; /*Centrerar alla produkter till mitten av skärmen*/
-    
+    max-width: 1200px;
+    /*Ser till att griden är max 1200 pixlar bred oavsett*/
+    margin: auto;
+    /*Centrerar alla produkter till mitten av skärmen*/
+
     text-align: center;
 }
 
 /*Utvalda Produkter-fönster*/
 .utvalda-produkter {
-    grid-column: 1 / -1; /*Starta vid kolumn 1 och gå till sista kolumn (där -1 = sista)*/
+    grid-column: 1 / -1;
+    /*Starta vid kolumn 1 och gå till sista kolumn (där -1 = sista)*/
 
     margin: 3vh 0;
     height: 40vh;
 
     background-image: linear-gradient(#00000050, #00000050), url("./images/nvidia_background.webp");
     background-position: center;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -239,7 +252,8 @@ main {
 }
 
 .utvalda-produkter button {
-    position: absolute; /*Gör att endast knappen ska flyttas ner, inte headern*/
+    position: absolute;
+    /*Gör att endast knappen ska flyttas ner, inte headern*/
     margin-top: 25vh;
 
     font-size: 18px;
@@ -248,7 +262,8 @@ main {
 
     background-color: var(--yellow);
     border: none;
-    border-radius: 50vw; /*För att göra bordern rundad, för att matcha med sökfältet*/
+    border-radius: 50vw;
+    /*För att göra bordern rundad, för att matcha med sökfältet*/
 
     cursor: pointer;
 
@@ -258,7 +273,8 @@ main {
 .utvalda-produkter button:hover {
     color: var(--red);
     transition: ease-in-out 0.1s;
-    padding: 1.25vh 2.5vw; /*Samma värden som innan hovern, men 25% större*/
+    padding: 1.25vh 2.5vw;
+    /*Samma värden som innan hovern, men 25% större*/
 }
 
 /*Produkter*/
@@ -294,12 +310,14 @@ main {
 }
 
 /*Knappen för "Lägg till i varukorg"*/
-.produkt button{
+.produkt button {
     padding: 1vh;
 
     background-color: var(--dark-transparent);
-    border: solid 2px #00000000; /*Sätter border transparent för att ta bort standardkanten på knappen*/
-    border-top: solid 2px var(--yellow); /*Ändrar toppen av bordern till solid gul, efter att ha "tagit bort" (dolt) standardkanten*/
+    border: solid 2px #00000000;
+    /*Sätter border transparent för att ta bort standardkanten på knappen*/
+    border-top: solid 2px var(--yellow);
+    /*Ändrar toppen av bordern till solid gul, efter att ha "tagit bort" (dolt) standardkanten*/
     color: var(--white);
 
     font-family: var(--default-font);
@@ -311,7 +329,7 @@ main {
 .produkt button:hover {
     border: 2px solid var(--yellow);
     cursor: pointer;
-    
+
     transition: ease-in-out 0.1s;
 }
 
@@ -329,7 +347,8 @@ footer {
     color: var(--white);
     text-align: center;
 
-    padding-top: 0.2rem; /*Makes the yellow background show a little on the top of the footer*/
+    padding-top: 0.2rem;
+    /*Makes the yellow background show a little on the top of the footer*/
 }
 
 #logotyp-i-footer {
@@ -345,19 +364,6 @@ footer {
 @media (min-width: 768px) {
 
     /*HIDE AND SEEK*/
-    #dropdown-button,
-    .dropdown {
-        visibility: hidden;
-    }
-
-    .navbar-links {
-        display: flex;
-    }
-
-    /*NAVBAR*/
-    .navbar {
-        justify-content: center; /*Centers every element in navbar horizontally*/
-    }
 
     /*Produkter*/
     .produkter-container {
@@ -369,11 +375,23 @@ footer {
 /*DESKTOP*/
 @media (min-width: 1025px) {
 
-    
     .produkter-container {
         grid-template-columns: repeat(5, 1fr);
     }
 
     /*HIDE AND SEEK*/
+    #dropdown-button,
+    .dropdown {
+        visibility: hidden;
+    }
 
+    .navbar-links {
+        display: flex;
+    }
+
+    /*NAVBAR*/
+    .navbar {
+        justify-content: center;
+        /*Centers every element in navbar horizontally*/
+    }
 }
