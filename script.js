@@ -15,3 +15,7 @@ window.addEventListener("resize", () => {
     const dropdown = document.getElementById("dropdown"); // Skapar en konstant för alla element med id:t dropdown
     if (dropdown) dropdown.classList.remove("active"); // Om alla element med det id:t har klassen "active" tas den klassen bort -> detta för att dölja menyn ifall fönstrets storlek förändras
 });
+
+function läggTill() {
+    console.log("Added to cart!");
+}
