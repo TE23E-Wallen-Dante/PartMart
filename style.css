@@ -186,10 +186,6 @@ body {
 *                   MAIN                   *
 *******************************************/
 
-main {
-    padding-bottom: 3vh;
-}
-
 /*Varukorg*/
 
 .varukorg-container {
@@ -428,18 +424,14 @@ main {
 *                  FOOTER                  *
 *******************************************/
 
-.yellow-bg-color-in-footer {
-    background-color: #171717;
-    padding: 1rem 0;
-}
-
 footer {
-    background-color: var(--yellow);
+    border-top: solid 2px var(--yellow);
+    background-color: var(--dark-gray);
     color: var(--white);
     text-align: center;
 
-    padding-top: 0.2rem;
-    /*Makes the yellow background show a little on the top of the footer*/
+    padding: 2vh 0;
+    margin-top: 2vh;
 }
 
 #logotyp-i-footer {
