@@ -17,40 +17,71 @@ window.addEventListener("resize", () => {
 });
 
 //*******************************************************
-//                      VARUKORG
+//                      VARUKORG MED LOCAL STORAGE
 //*******************************************************
 
 // Variabler
 const ul = document.querySelector("ul");
-const varukorg_varning = document.getElementById("placera-varning-varukorg");
-const max = 10;
-let count = 0; // Dummyvärde för att kunna utgå från något i mätningar efter att varor lagts till
+const varukorgStatus = document.getElementById("varukorg-status");
+const varukorgKostnad = document.getElementById("kostnad");
+const max = 3; // Max antal varor som användaren kan lägga i
+let count = 0;
 
-// Main-sida
-// Funktion som identifierar namn, pris, typ, och företag, och skriver ut det i konsolen
+// Hämta varukorgen från localStorage
+let varukorg = JSON.parse(localStorage.getItem("varukorg")) || [];
+laddaVarukorg(); //Kallar på funktionen som visar varukorgen för att visa den direkt när sidan laddas
+
+// Lägga till varor i varukorgen
 function läggTill(namn, pris) {
-    console.log("Namn: " + namn + "\nPris: " + pris + "kr")
+    if (varukorg.length < max) {
+        let produkt = {namn, pris};
 
-    // Om count är mindre än max, lägg gör det under
-    if (count < max) {
-        // Skapa ett li-element med liknande innehåll som konsolen
+        varukorg.push(produkt);
+        localStorage.setItem("varukorg", JSON.stringify(varukorg));
+        laddaVarukorg();
+    }
+}
+
+// Funktion för att visa varukorgen
+function laddaVarukorg() {
+    // Tömmer listan av produkter och produktkostnader när sidan laddas för att se till att dubbletter och felaktiga priser inte visas
+    ul.innerHTML = "";
+    let produktkostnad = 0;
+
+    varukorg.forEach((produkt, index) => {
         let li = document.createElement("li");
-        li.textContent = namn + ", Pris: " + pris + " kr";
+        li.textContent = `${produkt.namn}, Pris: ${produkt.pris} kr`;
         li.id = "varukorg";
 
-        // Kopplar ul-elementet med det nyskapade li, så att allt hamnar rätt (kommunikation)
+        // Skapa en knapp för att ta bort varan
+        let raderaProdukt = document.createElement("button");
+        raderaProdukt.textContent = "Ta bort";
+        raderaProdukt.onclick = () => taBort(index);
+
+        // Lägg till priset på produkten till den totala summan av kostnaden
+        produktkostnad += produkt.pris;
+
+        li.appendChild(raderaProdukt);
         ul.appendChild(li);
-        count++;
+    });
+    count = varukorg.length;
 
-        if (count >= max) {
-            // Skapa ett p-element med text som säger att varukorgen är full
-            let p = document.createElement("p");
-            p.textContent = "Varukorgen är full!";
-            p.id = "varukorg-full";
-
-            varukorg_varning.appendChild(p);
-
-        }
-
+    // Uppdaterar statusmeddelandet beroende på om varukorgen är tom, full, eller något där emellan :)
+    if (varukorg.length === 0){
+        varukorgStatus.textContent = "När du lägger till saker i varukorgen hamnar de här.";
+    } else if (varukorg.length < max) {
+        varukorgStatus.textContent = "";
+    } else if (varukorg.length >= max) {
+        varukorgStatus.textContent = "Varukorgen är full!";
     }
-};
+
+    // Uppdaterar den totala summan i varukorgen
+    varukorgKostnad.textContent = `Total kostnad: ${produktkostnad} kr`;
+}
+
+// Ta bort produkt från varukorg
+function taBort(index) {
+    varukorg.splice(index, 1);
+    localStorage.setItem("varukorg", JSON.stringify(varukorg));
+    laddaVarukorg();
+}

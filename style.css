@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 /*Logo font*/
 
-/*Properties (Font palette values) for Nabla font in navbar (makes it black)*/
+/*Inställningar (Font palette values) för Nabla font i navbar (gör den svart)*/
 @font-palette-values --logotype-navbar {
     font-family: 'Nabla';
     override-colors:
@@ -23,7 +23,7 @@
         9 #000000;
 }
 
-/*Properties (Font palette values) for Nabla font in footer (makes it white)*/
+/*Inställningar (Font palette values) för Nabla font i footer (gör den vit)*/
 @font-palette-values --logotype-footer {
     font-family: 'Nabla';
     override-colors:
@@ -67,6 +67,7 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 a {
@@ -187,6 +188,52 @@ body {
 
 main {
     padding-bottom: 3vh;
+}
+
+/*Varukorg*/
+
+.varukorg-container {
+    background-color: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#varukorg-titel, #köpinfo {
+    margin-bottom: 1vh;
+}
+
+#knapp-betala, #kostnad {
+    margin-bottom: 3vh;
+}
+
+#varukorg-titel {
+    text-align: center;
+    font-size: 24px;
+}
+
+.köpinfo-container {    
+    display: flex;
+    justify-content: center;
+}
+
+#köpinfo {
+    border-top: solid 2px var(--yellow);
+    color: #b5b5b5;
+    text-align: justify;
+    width: 50%;
+}
+
+#knapp-betala {
+    
+}
+
+#varukorg-status {
+    font-style: italic;
+}
+
+#kostnad {
+    font-weight: bold;
 }
 
 /*Sökfält*/
@@ -331,13 +378,6 @@ main {
     cursor: pointer;
 
     transition: ease-in-out 0.1s;
-}
-
-h4 {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 0.5vh;
-    margin-bottom: 3vh;
 }
 
 /*******************************************
