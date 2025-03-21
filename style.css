@@ -7,6 +7,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 /*Logo font*/
 
+/*H'r under använder jag COLRv1, en relativt ny funktion i css (de flesta browsersarna lade till support för det år 2022, och
+vissa program, exempelvis VS Code har ibland svårt att formatera den grejen vilket gör att det ser ut som att koden är felaktig
+när den egentligen är fungerande och korekkt angedd. Här finns mer info om COLRv1: https://nabla.typearture.com/whatisCOLRV1.html*/
+
 /*Inställningar (Font palette values) för Nabla font i navbar (gör den svart)*/
 @font-palette-values --logotype-navbar {
     font-family: 'Nabla';
