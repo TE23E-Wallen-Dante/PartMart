@@ -24,7 +24,7 @@ window.addEventListener("resize", () => {
 const ul = document.querySelector("ul");
 const varukorgStatus = document.getElementById("varukorg-status");
 const varukorgKostnad = document.getElementById("kostnad");
-const max = 3; // Max antal varor som användaren kan lägga i
+const max = 5; // Max antal varor som användaren kan lägga i
 let count = 0;
 
 // Hämta varukorgen från localStorage
