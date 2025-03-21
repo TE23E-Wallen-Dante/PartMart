@@ -333,6 +333,13 @@ main {
     transition: ease-in-out 0.1s;
 }
 
+h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0.5vh;
+    margin-bottom: 3vh;
+}
+
 /*******************************************
 *                  FOOTER                  *
 *******************************************/
