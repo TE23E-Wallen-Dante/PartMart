@@ -165,7 +165,7 @@ body {
 
 }
 
-#dropdown.active {
+#dropdown.active, .varukorg-container{
     display: flex;
     /*Makes sure the dropdown shows when clicked*/
 }
@@ -188,11 +188,15 @@ body {
 
 /*Varukorg*/
 
-.varukorg-container {
+#varukorg-container {
     background-color: var(--dark-gray);
-    display: flex;
+    display: none;
     justify-content: center;
     text-align: center;
+}
+
+#varukorg-container.active {
+    display: flex;
 }
 
 #varukorg-titel, #köpinfo {

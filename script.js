@@ -4,16 +4,30 @@ function showDropdown() {
     var dropdown = document.getElementById("dropdown"); // Skapar en variabel för alla element med id:t dropdown
 
     dropdown.classList.toggle("active"); // Togglar klassen "active" på alla element med id:t dropdown
-    console.log("Dropdown was clicked");
+    console.log("Dropdown togglades");
 
     dropdown.style.transition = 'opacity 0.5s ease'; // Lite fina detaljer :)
+}
+
+// Funktion för att toggla varukorgen när man klickar på knappen (i navbar)
+function showCart() {
+
+    var varukorgContainer = document.getElementById("varukorg-container");
+
+    varukorgContainer.classList.toggle("active");
+    console.log("Varukorg togglades");
+
+    varukorgContainer.style.transition = 'opacity 0.5s ease';
 }
 
 // Stänger ner menyn ifall fönstrets storlek förändras
 // Kollar efter när fönstrets storlek förändras
 window.addEventListener("resize", () => {
     const dropdown = document.getElementById("dropdown"); // Skapar en konstant för alla element med id:t dropdown
+    const varukorgContainer = document.getElementById("varukorg-container");
+
     if (dropdown) dropdown.classList.remove("active"); // Om alla element med det id:t har klassen "active" tas den klassen bort -> detta för att dölja menyn ifall fönstrets storlek förändras
+    if (varukorgContainer) varukorgContainer.classList.remove("active");
 });
 
 //*******************************************************
