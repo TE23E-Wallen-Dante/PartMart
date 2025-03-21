@@ -165,7 +165,8 @@ body {
 
 }
 
-#dropdown.active, .varukorg-container{
+#dropdown.active,
+.varukorg-container {
     display: flex;
     /*Makes sure the dropdown shows when clicked*/
 }
@@ -199,11 +200,13 @@ body {
     display: flex;
 }
 
-#varukorg-titel, #köpinfo {
+#varukorg-titel,
+#köpinfo {
     margin: 1vh 0;
 }
 
-#knapp-betala, #kostnad {
+#knapp-betala,
+#kostnad {
     margin-bottom: 3vh;
 }
 
@@ -212,7 +215,7 @@ body {
     font-size: 24px;
 }
 
-.köpinfo-container {    
+.köpinfo-container {
     display: flex;
     justify-content: center;
 }
@@ -341,6 +344,14 @@ body {
     font-size: 48px;
 }
 
+.utvalda-produkter a {
+    color: var(--black);
+}
+
+.utvalda-produkter a:hover {
+    color: var(--red);
+}
+
 .utvalda-produkter button {
     position: absolute;
     /*Gör att endast knappen ska flyttas ner, inte headern*/
@@ -450,11 +461,24 @@ footer {
 /*TABLET*/
 @media (min-width: 768px) {
 
-    /*HIDE AND SEEK*/
+    .navbar-ikoner img {
+        width: 35px;
+    }
 
-    /*Produkter*/
     .produkter-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #varukorg button {
+        font-size: 20px;
+    }
+
+    #dropdown, #varukorg-container, .produkt button, .produkt p, .produkt h3, .sökfält-innehåll>input, #kostnad, #knapp-betala, .utvalda-produkter button{
+        font-size: 24px;
+    }
+
+    .sökfält-innehåll>input {
+        width: 400px;
     }
 
 }
@@ -480,5 +504,19 @@ footer {
     .navbar {
         justify-content: center;
         /*Centers every element in navbar horizontally*/
+    }
+
+    .navbar-ikoner img {
+        width: var(--symbol-size-fixed);
+    }
+
+    /*MAIN*/
+
+    #varukorg button, #dropdown, #varukorg-container, .produkt button, .produkt p, .produkt h3, .sökfält-innehåll>input, #kostnad, #knapp-betala, .utvalda-produkter button{
+        font-size: 14px;
+    }
+
+    .sökfält-innehåll>input {
+        width: 300px;
     }
 }
